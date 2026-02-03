@@ -80,8 +80,27 @@ button {
   <div class="buttons">
     <button onclick="sayYes()">YES 💕</button>
     <button onclick="sayYes()">YES 😍</button>
-  </div>
+  </div> 
 </div>
+  /<audio id="music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function sayYes() {
+  // play music (works on iPhone because user tapped)
+  document.getElementById("music").play();
+
+  // WhatsApp message
+  const msg = encodeURIComponent(
+    "YES 💖 I will be your Valentine 😘 Happy Valentine’s Day 🥰"
+  );
+
+  // small delay so music starts, then redirect
+  setTimeout(() => {
+    window.location.href = "https://wa.me/?text=" + msg;
+  }, 800);
+}
 
 <script>
 function sayYes() {
