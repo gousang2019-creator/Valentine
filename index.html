@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine 💖</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffe6eb;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 360px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #d63384;
+}
+
+h2 {
+  color: #ff4d6d;
+}
+
+img {
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  margin: 15px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  background: #ff69b4;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.heart {
+  position: absolute;
+  bottom: -10px;
+  font-size: 18px;
+  animation: floatUp linear;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Jumm Riba 💕</h1>
+
+  <!-- upload your photo and name it couple.jpg -->
+  <img src="couple.jpg" alt="Us 💖">
+
+  <h2>Will you be my Valentine? 💖</h2>
+
+  <div class="buttons">
+    <button onclick="sayYes()">YES 💕</button>
+    <button onclick="sayYes()">YES 😍</button>
+  </div>
+</div>
+
+<script>
+function sayYes() {
+  alert("Yayyy!!! 💖 I love you 😘");
+}
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}, 500);
+</script>
+
+</body>
+</html>
