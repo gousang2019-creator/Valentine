@@ -88,24 +88,23 @@ button {
 
 <script>
 function sayYes() {
-  // play music (works on iPhone because user tapped)
-  document.getElementById("music").play();
+  const music = document.getElementById("music");
+  music.play();
 
-  // WhatsApp message
-  const msg = encodeURIComponent(
+  const message = encodeURIComponent(
     "YES 💖 I will be your Valentine 😘 Happy Valentine’s Day 🥰"
   );
 
-  // small delay so music starts, then redirect
+  // 🔴 REPLACE WITH YOUR WHATSAPP NUMBER
+  const phoneNumber = "918119019964";
+
   setTimeout(() => {
-    window.location.href = "https://wa.me/?text=" + msg;
-  }, 800);
+    window.location.href =
+      "https://wa.me/" + phoneNumber + "?text=" + message;
+  }, 700);
 }
 
-<script>
-function sayYes() {
-  alert("Yayyy!!! 💖 I love you 😘");
-}
+// floating hearts
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
